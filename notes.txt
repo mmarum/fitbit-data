@@ -1,0 +1,15 @@
+OAuth 2.0 Client ID
+22CTVJ
+
+Client Secret
+e1793f999a271f160d6e16163894e45a
+
+Callback URL
+http://www.marum.us/fitbit/callback/
+
+OAuth 2.0: Authorization URI
+https://www.fitbit.com/oauth2/authorize
+
+OAuth 2.0: Access/Refresh Token Request URI
+https://api.fitbit.com/oauth2/token
+

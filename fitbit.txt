@@ -1,0 +1,58 @@
+curl -X POST -i -H 'Authorization: Basic MjJDVFZKOmUxNzkzZjk5OWEyNzFmMTYwZDZlMTYxNjM4OTRlNDVh' -H 'Content-Type: application/x-www-form-urlencoded' -d "clientId=22CTVJ" -d "grant_type=authorization_code" -d "redirect_uri=http%3A%2F%2Fwww.marum.us%2Ffitbit%2Fcallback%2F" -d "code=2eeb24172321294db3282fcaaa8c5ce302632f88" https://api.fitbit.com/oauth2/token
+
+HTTP/2 200 
+date: Tue, 05 Jun 2018 20:26:10 GMT
+content-type: application/json;charset=UTF-8
+vary: Origin,Accept-Encoding
+cache-control: no-cache, private
+content-language: en-US
+x-frame-options: SAMEORIGIN
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+server: cloudflare
+cf-ray: 42655f688f982198-EWR
+
+{"access_token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2NzlONUciLCJhdWQiOiIyMkNUVkoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcnNldCBybG9jIHJ3ZWkgcmhyIHJwcm8gcm51dCByc2xlIiwiZXhwIjoxNTI4MjU5MTcwLCJpYXQiOjE1MjgyMzAzNzB9.o00FA7g4RDJEic-LJRowC73UzjHusVpuHK8zsy8n0aY","expires_in":28800,"refresh_token":"b1481afc07e12a16c8ddd387606a21c43c55a313407cc657e942a7db128f14ef","scope":"activity heartrate sleep social settings profile location weight nutrition","token_type":"Bearer","user_id":"679N5G"}
+
+UserId: 679N5G
+
+Access token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2NzlONUciLCJhdWQiOiIyMkNUVkoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcnNldCBybG9jIHJ3ZWkgcmhyIHJwcm8gcm51dCByc2xlIiwiZXhwIjoxNTI4MjU5MTcwLCJpYXQiOjE1MjgyMzAzNzB9.o00FA7g4RDJEic-LJRowC73UzjHusVpuHK8zsy8n0aY
+
+Refresh Token: b1481afc07e12a16c8ddd387606a21c43c55a313407cc657e942a7db128f14ef
+
+Scope(s): activity heartrate sleep social settings profile location weight nutrition
+
+Make a Request:
+
+OAuth 2.0 Access Token:	
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2NzlONUciLCJhdWQiOiIyMkNUVkoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcnNldCBybG9jIHJ3ZWkgcmhyIHJwcm8gcm51dCByc2xlIiwiZXhwIjoxNTI4MjU5MTcwLCJpYXQiOjE1MjgyMzAzNzB9.o00FA7g4RDJEic-LJRowC73UzjHusVpuHK8zsy8n0aY
+
+API endpoint URL:	
+https://api.fitbit.com/1/user/-/profile.json
+
+curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2NzlONUciLCJhdWQiOiIyMkNUVkoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcnNldCBybG9jIHJ3ZWkgcmhyIHJwcm8gcm51dCByc2xlIiwiZXhwIjoxNTI4MjU5MTcwLCJpYXQiOjE1MjgyMzAzNzB9.o00FA7g4RDJEic-LJRowC73UzjHusVpuHK8zsy8n0aY" https://api.fitbit.com/1/user/-/profile.json
+HTTP/2 200 
+date: Tue, 05 Jun 2018 20:28:53 GMT
+content-type: application/json;charset=UTF-8
+vary: Origin,Accept-Encoding
+cache-control: no-cache, private
+content-language: en
+fitbit-rate-limit-limit: 150
+fitbit-rate-limit-remaining: 150
+fitbit-rate-limit-reset: 1867
+x-frame-options: SAMEORIGIN
+expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+server: cloudflare
+cf-ray: 4265635f8d0c21bc-EWR
+
+{"user":{"age":45,"ambassador":false,"autoStrideEnabled":true,"avatar":"https://d6y8zfzc2qfsl.cloudfront.net/4468081E-DB02-0C1D-B606-B8C1AE976764_profile_100_square.jpg","avatar150":"https://d6y8zfzc2qfsl.cloudfront.net/4468081E-DB02-0C1D-B606-B8C1AE976764_profile_150_square.jpg","avatar640":"https://d6y8zfzc2qfsl.cloudfront.net/4468081E-DB02-0C1D-B606-B8C1AE976764_profile_640_square.jpg","averageDailySteps":15620,"clockTimeDisplayFormat":"12hour","corporate":false,"corporateAdmin":false,"dateOfBirth":"1973-05-17","displayName":"Matt M.","displayNameSetting":"name","distanceUnit":"en_US","encodedId":"679N5G","features":{"exerciseGoal":true},"firstName":"Matt","foodsLocale":"en_US","fullName":"Matt Marum","gender":"MALE","glucoseUnit":"en_US","height":182,"heightUnit":"en_US","isChild":false,"lastName":"Marum","locale":"en_US","memberSince":"2017-12-24","mfaEnabled":false,"offsetFromUTCMillis":-14400000,"startDayOfWeek":"SUNDAY","strideLengthRunning":125,"strideLengthRunningType":"auto","strideLengthWalking":75.5,"strideLengthWalkingType":"default","swimUnit":"en_US","timezone":"America/New_York","topBadges":[{"badgeGradientEndColor":"A489E8","badgeGradientStartColor":"38216E","badgeType":"DAILY_STEPS","category":"Daily Steps","cheers":[],"dateTime":"2018-05-20","description":"20,000 steps in a day","earnedMessage":"Congrats on earning your first High Tops badge!","encodedId":"228TPP","image100px":"https://static0.fitbit.com/images/badges_new/100px/badge_daily_steps20k.png","image125px":"https://static0.fitbit.com/images/badges_new/125px/badge_daily_steps20k.png","image300px":"https://static0.fitbit.com/images/badges_new/300px/badge_daily_steps20k.png","image50px":"https://static0.fitbit.com/images/badges_new/badge_daily_steps20k.png","image75px":"https://static0.fitbit.com/images/badges_new/75px/badge_daily_steps20k.png","marketingDescription":"You've walked 20,000 steps  And earned the High Tops badge!","mobileDescription":"When it comes to steps, it looks like you're not playing around. This achievement was a slam dunk.","name":"High Tops (20,000 steps in a day)","shareImage640px":"https://static0.fitbit.com/images/badges_new/386px/shareLocalized/en_US/badge_daily_steps20k.png","shareText":"I took 20,000 steps and earned the High Tops badge! #Fitbit","shortDescription":"20,000 steps","shortName":"High Tops","timesAchieved":5,"value":20000},{"badgeGradientEndColor":"FFDB01","badgeGradientStartColor":"D99123","badgeType":"LIFETIME_DISTANCE","category":"Lifetime Distance","cheers":[],"dateTime":"2018-06-03","description":"990 lifetime miles","earnedMessage":"Whoa! You've earned the New Zealand badge!","encodedId":"22B8MD","image100px":"https://static0.fitbit.com/images/badges_new/100px/badge_lifetime_miles990.png","image125px":"https://static0.fitbit.com/images/badges_new/125px/badge_lifetime_miles990.png","image300px":"https://static0.fitbit.com/images/badges_new/300px/badge_lifetime_miles990.png","image50px":"https://static0.fitbit.com/images/badges_new/badge_lifetime_miles990.png","image75px":"https://static0.fitbit.com/images/badges_new/75px/badge_lifetime_miles990.png","marketingDescription":"By reaching 990 lifetime miles, you've earned the New Zealand badge!","mobileDescription":"You've walked the entire length of New Zealand.","name":"New Zealand (990 lifetime miles)","shareImage640px":"https://static0.fitbit.com/images/badges_new/386px/shareLocalized/en_US/badge_lifetime_miles990.png","shareText":"I covered 990 miles with my #Fitbit and earned the New Zealand badge.","shortDescription":"990 miles","shortName":"New Zealand","timesAchieved":1,"unit":"MILES","value":990},{"badgeGradientEndColor":"38D7FF","badgeGradientStartColor":"2DB4D7","badgeType":"DAILY_FLOORS","category":"Daily Climb","cheers":[],"dateTime":"2018-03-30","description":"125 floors in a day","earnedMessage":"Congrats on earning your first Rollercoaster badge!","encodedId":"229844","image100px":"https://static0.fitbit.com/images/badges_new/100px/badge_daily_floors125.png","image125px":"https://static0.fitbit.com/images/badges_new/125px/badge_daily_floors125.png","image300px":"https://static0.fitbit.com/images/badges_new/300px/badge_daily_floors125.png","image50px":"https://static0.fitbit.com/images/badges_new/badge_daily_floors125.png","image75px":"https://static0.fitbit.com/images/badges_new/75px/badge_daily_floors125.png","marketingDescription":"You've climbed 125 floors to earn the Rollercoaster badge!","mobileDescription":"That's hair-raising, jaw-dropping, mind-blowing floor count!","name":"Rollercoaster (125 floors in a day)","shareImage640px":"https://static0.fitbit.com/images/badges_new/386px/shareLocalized/en_US/badge_daily_floors125.png","shareText":"I climbed 125 flights of stairs and earned the Rollercoaster badge! #Fitbit","shortDescription":"125 floors","shortName":"Rollercoaster","timesAchieved":1,"value":125},{"badgeGradientEndColor":"00D3D6","badgeGradientStartColor":"007273","badgeType":"LIFETIME_FLOORS","category":"Lifetime Climb","cheers":[],"dateTime":"2018-04-25","description":"2,000 lifetime floors","earnedMessage":"Yipee! You've earned the Hot Air Balloon badge!","encodedId":"228T9T","image100px":"https://static0.fitbit.com/images/badges_new/100px/badge_lifetime_floors2k.png","image125px":"https://static0.fitbit.com/images/badges_new/125px/badge_lifetime_floors2k.png","image300px":"https://static0.fitbit.com/images/badges_new/300px/badge_lifetime_floors2k.png","image50px":"https://static0.fitbit.com/images/badges_new/badge_lifetime_floors2k.png","image75px":"https://static0.fitbit.com/images/badges_new/75px/badge_lifetime_floors2k.png","marketingDescription":"By climbing 2000 lifetime floors, you've earned the Hot Air Balloon badge!","mobileDescription":"That's as high as a hot air balloon! You are really blowing up the lifetime badges list.","name":"Hot Air Balloon (2,000 lifetime floors)","shareImage640px":"https://static0.fitbit.com/images/badges_new/386px/shareLocalized/en_US/badge_lifetime_floors2k.png","shareText":"I climbed 2,000 floors with my #Fitbit and earned the Hot Air Balloon badge.","shortDescription":"2,000 floors","shortName":"Hot Air Balloon","timesAchieved":1,"value":2000}],"waterUnit":"en_US","waterUnitName":"fl oz","weight":83.9,"weightUnit":"en_US"}}
+
+Refresh Token:
+b1481afc07e12a16c8ddd387606a21c43c55a313407cc657e942a7db128f14ef
+
+curl -X POST -i -H "Authorization: Basic MjJDVFZKOmUxNzkzZjk5OWEyNzFmMTYwZDZlMTYxNjM4OTRlNDVh" -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=refresh_token" -d "refresh_token=b1481afc07e12a16c8ddd387606a21c43c55a313407cc657e942a7db128f14ef" https://api.fitbit.com/oauth2/token
+
+
+
+http://216.172.104.70:6080/php/urlblock.php?vsys=1&cat=16383&title=unknown&rulename=ADI-Users%20-%20Internet&sip=10.41.1.192&token=E4190FE14434D2F94B927E3C5960A4DD&url=http://www.marum.us%2ffitbit%2fcallback%2f#access_token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2NzlONUciLCJhdWQiOiIyMkNUVkoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJzZXQgcmFjdCBybG9jIHJ3ZWkgcmhyIHJwcm8gcm51dCByc2xlIiwiZXhwIjoxNTI4OTE5Mjk2LCJpYXQiOjE1MjgzMTQ0OTZ9.vtZpATreCUZFxqnjb6WW9LAEEbwYHhXRioSXkkywcoM&user_id=679N5G&scope=settings+sleep+heartrate+weight+activity+profile+location+social+nutrition&token_type=Bearer&expires_in=604800
+
+http://216.172.104.70:6080/php/urlblock.php?vsys=1&cat=16383&title=unknown&rulename=ADI-Users%20-%20Internet&sip=10.41.1.192&token=E4190FE14434D2F94B927E3C5960A4DD&url=http://www.marum.us%2ffitbit%2fcallback%2f#access_token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2NzlONUciLCJhdWQiOiIyMkNUVkoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJzZXQgcmFjdCBybG9jIHJ3ZWkgcmhyIHJwcm8gcm51dCByc2xlIiwiZXhwIjoxNTI4OTE5Mjk2LCJpYXQiOjE1MjgzMTU5MDB9.-U1QnJdQTkIUgUDuonIbaEbEQm9h8qG6c8V4TVtXffA&user_id=679N5G&scope=settings+sleep+heartrate+weight+activity+profile+location+social+nutrition&token_type=Bearer&expires_in=603396
