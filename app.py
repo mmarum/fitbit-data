@@ -1,23 +1,62 @@
 import fitbit
+import requests
+import json
+from configs import settings
 
-consumer_key = "22CTVJ"
-consumer_secret = "e1793f999a271f160d6e16163894e45a"
+token_file = 'token.json'
 
-# Docs:
 # http://python-fitbit.readthedocs.io/en/latest/
 
-#access_token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2NzlONUciLCJhdWQiOiIyMkNUVkoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcnNldCBybG9jIHJ3ZWkgcmhyIHJwcm8gcm51dCByc2xlIiwiZXhwIjoxNTI4MjU5MTcwLCJpYXQiOjE1MjgyMzAzNzB9.o00FA7g4RDJEic-LJRowC73UzjHusVpuHK8zsy8n0aY"
-#refresh_token = "b1481afc07e12a16c8ddd387606a21c43c55a313407cc657e942a7db128f14ef"
+def read_token():
+    with open(token_file, 'r') as f:
+        t = json.load(f)
+        return { "access_token": t['access_token'], 
+            "refresh_token": t['refresh_token'] }
 
-# July 12 2018:
-access_token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2NzlONUciLCJhdWQiOiIyMkNUVkoiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcnNldCBybG9jIHJ3ZWkgcmhyIHJwcm8gcm51dCByc2xlIiwiZXhwIjoxNTMxNDcwMTE4LCJpYXQiOjE1MzE0NDEzMTh9.HaQyToXqVD8gMBH2xFWKHVLN63y99SeIVcAMj-kqbOc"
-refresh_token = "7dff75bb5855fc131758d841edcd8f23ff2eb7a2b48de8351c4458c7c9780dea"
 
-authd_client = fitbit.Fitbit(consumer_key, consumer_secret, access_token=access_token, refresh_token=refresh_token)
+def authd_client(token):
+    return fitbit.Fitbit(settings['consumer_key'], 
+        settings['consumer_secret'], 
+        access_token=token['access_token'], 
+        refresh_token=token['refresh_token'])
 
-sleep_data = authd_client.sleep()
-#heart_data = authd_client.heart()
 
-print(sleep_data['sleep'])
-print("= = = = = = = = = = = = = =")
-#print(heart_data['activities-heart'])
+def refresh_token(token):
+    payload = {
+        "grant_type": "refresh_token",
+        "refresh_token": token['refresh_token']
+    }
+    headers = {
+        "Host": "api.fitbit.com",
+        "Authorization": "Basic " + settings['authorization_id'],
+        "Content-Type": "application/x-www-form-urlencoded"
+    }
+    return requests.get('https://api.fitbit.com/oauth2/token', 
+        params=payload, headers=headers)
+
+
+def call_fitbit(token):
+    try:
+        authd_resp = authd_client(token)
+        # Basic check:
+        activities_data = authd_resp.activities()
+        return authd_resp
+    except:
+        token = refresh_token(token)
+        f = open(token_file, 'w')
+        f.write(str(token.json()))
+        f.close()
+        return authd_client(token)
+
+
+token = read_token()
+authd_client = call_fitbit(token)
+
+data = ['caloriesOut', 'floors', 'restingHeartRate', 
+    'sedentaryMinutes', 'steps', 'veryActiveMinutes']
+
+activities_data = authd_client.activities()
+a = activities_data['summary']
+for d in data:
+    print(f'{d}: {str(a[d])}')
+
