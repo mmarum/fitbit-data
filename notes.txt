@@ -1,3 +1,13 @@
+fitbit data
+- line-graph-1: steps, distance, calories, active minutes, resting heart rate
+  all data (no limit in data range)
+
+- line-graph-2: sleep data
+
+- gps data?
+
+- - - - - -
+
 OAuth 2.0 Client ID
 22CTVJ
 
